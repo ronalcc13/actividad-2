@@ -29,12 +29,64 @@
 
     <!-- ================= MAIN / BODY ================= -->
     <main id="main">
-        <!-- COLABORADOR 1 -->
+
+        <!-- HERO -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Bienvenido a Mi Proyecto</h1>
+                <p>Desarrollo web con HTML, CSS y JavaScript</p>
+                <button class="btn" onclick="saludo()">Explorar</button>
+            </div>
+        </section>
+
+        <!-- SERVICIOS -->
+        <section id="servicios" class="section container">
+            <h2>Servicios</h2>
+
+            <div class="cards">
+                <div class="card">
+                    <h3>Diseño Web</h3>
+                    <p>Creación de páginas modernas y responsivas.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Desarrollo</h3>
+                    <p>Funcionalidades con JavaScript.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Soporte</h3>
+                    <p>Mantenimiento y mejora continua.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACTO -->
+        <section id="contacto" class="section contacto">
+            <h2>Contacto</h2>
+
+            <form class="form" onsubmit="return validarFormulario()">
+                <input type="text" id="nombre" placeholder="Nombre">
+                <input type="email" id="email" placeholder="Correo">
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+
     </main>
 
     <!-- ================= FOOTER ================= -->
     <footer id="footer">
-        <!-- COLABORADOR 1 -->
+        <div class="container">
+
+            <p>© 2026 Mi Proyecto</p>
+
+            <div class="redes">
+                <a href="#">Facebook</a>
+                <a href="#">Instagram</a>
+                <a href="#">Twitter</a>
+            </div>
+
+        </div>
     </footer>
 
     <!-- JS -->

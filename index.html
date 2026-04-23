@@ -1,80 +1,128 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proyecto Web</title>
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Actividad 2 - Proyecto Completo</title>
+<link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-    <!-- ================= HEADER ================= -->
-    <header id="header">
-        <!-- LÍDER -->
-    </header>
+<!-- ================= HEADER ================= -->
+<header class="header">
+  <div class="container nav-container">
+    <h1 class="logo">Actividad 2</h1>
 
-    <!-- ================= MAIN / BODY ================= -->
-    <main id="main">
+    <nav class="nav" id="nav">
+      <a href="#inicio">Inicio</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#galeria">Galería</a>
+      <a href="#tabs">Tabs</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
 
-        <section id="inicio">
-            <h1>Proyecto Web — Actividad 2</h1>
-            <p>Página hecha con HTML, CSS y JavaScript en equipo.</p>
-            <a href="#equipo">Ver equipo</a>
-        </section>
+    <button class="toggle" onclick="toggleMenu()">☰</button>
+  </div>
+</header>
 
-        <section id="equipo">
-            <h2>El equipo</h2>
-            <p>Somos tres estudiantes que hicimos esta página trabajando con ramas en GitHub. Cada uno se encargó de una parte distinta.</p>
-        </section>
+<main>
 
-        <section id="tecnologias">
-            <h2>Lo que usamos</h2>
-            <div class="cards">
-                <div class="card">
-                    <h3>HTML</h3>
-                    <p>Para armar la estructura de la página.</p>
-                </div>
-                <div class="card">
-                    <h3>CSS</h3>
-                    <p>Para darle estilo y que se vea bien.</p>
-                </div>
-                <div class="card">
-                    <h3>JavaScript</h3>
-                    <p>Para agregarle funcionalidad.</p>
-                </div>
-            </div>
-        </section>
+<!-- HERO -->
+<section id="inicio" class="hero">
+  <div class="hero-content">
+    <h1>Proyecto Web Completo</h1>
+    <p>HTML + CSS + JavaScript + GitHub</p>
+    <button class="btn" onclick="openModal()">Abrir Modal</button>
+  </div>
+</section>
 
-        <section id="contacto">
-            <h2>Contacto</h2>
-            <form id="form-contacto">
-                <label for="nombre">Nombre</label>
-                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+<!-- CONTADOR -->
+<section class="section container center">
+  <h2>Contador</h2>
+  <h3 id="contador">0</h3>
+  <button class="btn" onclick="incrementar()">Sumar</button>
+</section>
 
-                <label for="email">Correo</label>
-                <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required>
+<!-- SERVICIOS -->
+<section id="servicios" class="section container">
+  <h2>Servicios</h2>
+  <div class="grid-3">
+    <div class="card">Diseño Web</div>
+    <div class="card">Desarrollo</div>
+    <div class="card">Soporte</div>
+  </div>
+</section>
 
-                <label for="mensaje">Mensaje</label>
-                <textarea id="mensaje" name="mensaje" rows="4" placeholder="Escribe aquí..." required></textarea>
+<!-- GALERIA -->
+<section id="galeria" class="section container">
+  <h2>Galería</h2>
+  <div class="galeria">
+    <img src="https://picsum.photos/300?1">
+    <img src="https://picsum.photos/300?2">
+    <img src="https://picsum.photos/300?3">
+    <img src="https://picsum.photos/300?4">
+  </div>
+</section>
 
-                <button type="submit">Enviar</button>
-            </form>
-        </section>
+<!-- TABS -->
+<section id="tabs" class="section container">
+  <h2>Tabs</h2>
+  <div class="tabs">
+    <button onclick="openTab('tab1')">HTML</button>
+    <button onclick="openTab('tab2')">CSS</button>
+    <button onclick="openTab('tab3')">JS</button>
+  </div>
 
-    </main>
+  <div id="tab1" class="tab-content active">Contenido HTML</div>
+  <div id="tab2" class="tab-content">Contenido CSS</div>
+  <div id="tab3" class="tab-content">Contenido JS</div>
+</section>
 
-    <footer id="footer">
-        <div class="footer-links">
-            <a href="#inicio">Inicio</a>
-            <a href="#equipo">Equipo</a>
-            <a href="#tecnologias">Tecnologías</a>
-            <a href="#contacto">Contacto</a>
-        </div>
-        <p>Actividad 2 &mdash; 2026</p>
-    </footer>
-    <script src="script.js"></script>
+<!-- FAQ -->
+<section id="faq" class="section container">
+  <h2>Preguntas</h2>
+
+  <div class="accordion">
+    <button onclick="toggleAcc(this)">¿Qué es HTML?</button>
+    <div class="panel">Lenguaje de estructura</div>
+
+    <button onclick="toggleAcc(this)">¿Qué es CSS?</button>
+    <div class="panel">Estilos visuales</div>
+
+    <button onclick="toggleAcc(this)">¿Qué es JS?</button>
+    <div class="panel">Interactividad</div>
+  </div>
+</section>
+
+<!-- FORM -->
+<section id="contacto" class="section container">
+  <h2>Contacto</h2>
+  <form id="form">
+    <input type="text" id="nombre" placeholder="Nombre">
+    <input type="email" id="email" placeholder="Correo">
+    <textarea id="mensaje" placeholder="Mensaje"></textarea>
+    <button type="submit">Enviar</button>
+  </form>
+</section>
+
+</main>
+
+<!-- MODAL -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span onclick="closeModal()" class="close">&times;</span>
+    <h2>Modal activo</h2>
+    <p>Esto es un popup</p>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Proyecto Completo</p>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>

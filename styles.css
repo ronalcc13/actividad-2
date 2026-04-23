@@ -1,202 +1,181 @@
-/* ================= RESET ================= */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #f4f6f8;
-    color: #222;
+    font-family: Arial;
+    background: #f4f4f4;
 }
 
-/* ================= CONTENEDOR ================= */
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: auto;
-}
-
-/* ================= HEADER ================= */
+/* HEADER */
 .header {
+    background: #111;
+    color: white;
     position: sticky;
     top: 0;
-    background: linear-gradient(90deg, #0f2027, #203a43, #2c5364);
-    padding: 15px 0;
-    z-index: 1000;
 }
 
-.header .container {
+.nav-container {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    padding: 15px;
 }
 
-.logo {
-    color: #00e6ff;
-    font-size: 26px;
-    font-weight: bold;
-}
-
-/* NAV */
 .nav {
     display: flex;
-    gap: 30px;
+    gap: 20px;
 }
 
 .nav a {
     color: white;
     text-decoration: none;
-    font-size: 16px;
-    position: relative;
 }
 
-/* EFECTO LINEA */
-.nav a::after {
-    content: "";
-    position: absolute;
-    width: 0%;
-    height: 2px;
-    background: #00e6ff;
-    left: 0;
-    bottom: -5px;
-    transition: 0.3s;
-}
-
-.nav a:hover::after {
-    width: 100%;
-}
-
-/* BOTON MOVIL */
 .toggle {
     display: none;
-    font-size: 26px;
-    background: none;
-    border: none;
-    color: white;
-    cursor: pointer;
 }
 
-/* ================= HERO ================= */
+/* HERO */
 .hero {
-    height: 80vh;
+    height: 90vh;
+    background: linear-gradient(#0008, #0008), url("https://picsum.photos/1600/900");
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
     color: white;
-
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-                url("https://picsum.photos/1600/900");
-    background-size: cover;
-    background-position: center;
+    text-align: center;
 }
 
-.hero h1 {
-    font-size: 48px;
-    margin-bottom: 10px;
+/* GENERAL */
+.section {
+    padding: 60px 20px;
 }
 
-.hero p {
-    margin-bottom: 20px;
+.container {
+    max-width: 1100px;
+    margin: auto;
+}
+
+.center {
+    text-align: center;
 }
 
 .btn {
-    padding: 12px 25px;
-    background: #00e6ff;
+    padding: 10px 20px;
+    background: cyan;
     border: none;
-    cursor: pointer;
-    transition: 0.3s;
 }
 
-.btn:hover {
-    background: #00bcd4;
-}
-
-/* ================= SECCIONES ================= */
-.section {
-    padding: 60px 0;
-}
-
-/* ================= CARDS ================= */
-.cards {
+/* GRID */
+.grid-3 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
+    gap: 20px;
 }
 
 .card {
     background: white;
-    padding: 25px;
-    border-radius: 8px;
-    text-align: center;
-    transition: 0.3s;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    padding: 20px;
 }
 
-.card:hover {
-    transform: translateY(-5px);
+/* GALERIA */
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
 }
 
-/* ================= CONTACTO ================= */
-.contacto {
-    text-align: center;
+.galeria img {
+    width: 100%;
 }
 
-.form {
-    margin-top: 20px;
+/* TABS */
+.tabs button {
+    margin: 5px;
 }
 
-.form input {
-    padding: 12px;
-    margin: 10px;
-    width: 250px;
-    border: 1px solid #ccc;
+.tab-content {
+    display: none;
+    padding: 20px;
+    background: white;
 }
 
-.form button {
-    padding: 12px 25px;
-    background: #00e6ff;
+.tab-content.active {
+    display: block;
+}
+
+/* ACCORDION */
+.accordion button {
+    width: 100%;
+    padding: 10px;
+    background: #333;
+    color: white;
     border: none;
+}
+
+.panel {
+    display: none;
+    padding: 10px;
+    background: #ddd;
+}
+
+/* MODAL */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #0008;
+}
+
+.modal-content {
+    background: white;
+    margin: 15% auto;
+    padding: 20px;
+    width: 300px;
+}
+
+.close {
     cursor: pointer;
 }
 
-/* ================= FOOTER ================= */
+/* FORM */
+form input,
+textarea {
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+}
+
+/* FOOTER */
 footer {
-    background: #0f2027;
+    background: #111;
     color: white;
     text-align: center;
-    padding: 25px;
-    margin-top: 40px;
+    padding: 20px;
 }
 
-.redes {
-    margin-top: 10px;
-}
+/* RESPONSIVE */
+@media (max-width:768px) {
+    .grid-3 {
+        grid-template-columns: 1fr;
+    }
 
-.redes a {
-    color: #00e6ff;
-    margin: 0 10px;
-    text-decoration: none;
-}
-
-/* ================= RESPONSIVE ================= */
-@media (max-width: 768px) {
+    .galeria {
+        grid-template-columns: 1fr 1fr;
+    }
 
     .nav {
-        position: absolute;
-        top: 70px;
-        right: 0;
-        background: #203a43;
-        flex-direction: column;
-        width: 200px;
-        padding: 20px;
         display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: #111;
     }
 
     .nav.active {
@@ -205,13 +184,6 @@ footer {
 
     .toggle {
         display: block;
-    }
-
-    .cards {
-        grid-template-columns: 1fr;
-    }
-
-    .hero h1 {
-        font-size: 32px;
+        color: white;
     }
 }
